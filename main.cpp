@@ -7,7 +7,7 @@ int main()
     double salario, servico, capital, medico, educa;
     double isalario, iservico, icapital;
     double maxDedu, gastosDedu;
-    double impTotal;
+    double impTotal, abatimento;
 
     cout << "Renda anual com salario: "; cin >> salario;
     cout << "Renda anual com prestacao de servico: "; cin >> servico;
@@ -37,6 +37,14 @@ int main()
     cout << endl << "DEDUCOES:" << endl;
     cout << "Maximo dedutivel: " << maxDedu << endl;
     cout << "Gastos dedutiveis: " << gastosDedu << endl;
+
+    if (maxDedu > gastosDedu) {abatimento = gastosDedu;}
+    else {abatimento = maxDedu;}
+
+    cout << endl << "RESUMO:" << endl;
+    cout << "Imposto bruto total: " << impTotal << endl;
+    cout << "Abatimento: " << abatimento << endl;
+    cout << "Imposto devido: " << impTotal - abatimento;
 
     return 0;
 }
